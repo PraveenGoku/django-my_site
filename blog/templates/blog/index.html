@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    My Blog
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock  %}
+
+{% block content %}
+    <header id="main-navigation">
+        <h1><a href="">Praveen's Blog</a></h1>
+        <nav>
+            <a href="">All Posts</a>
+        </nav>
+    </header>
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/woods.jpg" %}" />
+            <h2>PRAVEEN'S BLOG</h2>
+        </header>
+        <p>Hi, I am Praveen and I love to blog about tech and the world!</p>
+    </section>
+    
+
+    <section id="latest-posts">   
+        <h2>My Latest Thoughts</h2>
+        <ul>
+            <li>
+                <article class="post">
+                    <a href="">
+                        <img src="{% static "blog/images/mountains.jpg" %}" />
+                        <div class="post__content">
+                            <h3>Mountain Hiking</h3>
+                            <p>There's nothing like the views you see from the top of the mountains!</p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+        </ul>
+    </section>
+
+
+    <section id="about">
+        <h2>What i Do</h2>
+        <p>I love programming and new technologies in general!</p>
+        <p>Goal</p>
+    </section>
+    {% comment %} <ul>
+        {% for post in posts %}
+            <li><a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul> {% endcomment %}
+{% endblock %}
